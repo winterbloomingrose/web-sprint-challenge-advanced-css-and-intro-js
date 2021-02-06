@@ -19,6 +19,11 @@ font-size: 100%;
 font: inherit;  
 vertical-align: baseline;  
 }
+
+/* RESPONSIVE */
+@-ms-viewport{
+  width: device-width;
+}
 /*GENERAL STYLES*/
 html{
     font-size:62.5%;
@@ -96,7 +101,7 @@ nav span{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height:60vh;
+    height:55vh;
     margin:5% 0;
 }	
 .title-container div:hover {	
@@ -134,3 +139,41 @@ button:hover{
 .artist img{
     width:100%;
 }
+
+/* RESPONSIVE */
+@media only screen and (max-width: 500px) {
+    h1 {
+        font-size:3rem;
+        font-weight:700;
+    }
+    nav {
+        justify-content: object-fit;
+        width: 20%;
+    }
+    nav span {
+        border-left: 2px solid #626262;
+        margin:10%;
+    }
+
+    .title-container div {
+        width:100%;
+        background-position: cover;
+    }
+    .artists-container {
+        align-items: center;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .artist {
+        text-align: center;
+        width: 60%;
+    }
+    .artist img {
+        height: 70%;
+        width: 70%;
+    }
+} 
+
