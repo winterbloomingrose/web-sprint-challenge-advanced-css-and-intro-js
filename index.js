@@ -219,8 +219,8 @@ console.log(artists[2].bio)
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
- artists [9].name = "Vincent Van Gogh";
- console.log(artists[9].name);
+ artists [8].name = "Vincent Van Gogh";
+ console.log(artists[8].name);
 
 
 
@@ -232,8 +232,11 @@ There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is current
  
  Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex([/*arraynumber*/]./*indexnumberhere*/) {
-  return `the artist at index {id} is {name}`
+function getArtistByIndex(indexnumber, name) {
+  let indexnumber = artists[/*indexnumber*/].id;
+  let name = artists[/*indexnumber*/].name;
+
+  return "the artist at index " + indexnumber + " is " + name; 
 }  
 
 
@@ -261,7 +264,7 @@ function get20s(/*Your Code Here*/){
  
  For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(/*Your Code Here*/){
+function removeArtist(indexnumber, ){
    /*Your Code Here*/
 }
    
@@ -282,9 +285,15 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
+function addArtist(array, newObject){
+
+  "id": 19,
+  "name": "Cipta Hussain",
+  "years": "2001 - present",
+  "genre": "Web Developement",
+  "nationality": "American",
+  "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis lacus vel tellus posuere rhoncus quis eget nisl. Vivamus eu aliquet leo, et lobortis nibh.",
+}
 
   
 
