@@ -241,6 +241,7 @@ function getArtistByIndex(indexnumber, name) {
 
 
 
+
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use get20s to do the following: 
 1. Receive an array
@@ -249,11 +250,19 @@ Use get20s to do the following:
 Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(/*Your Code Here*/){
-  /*Your Code Here*/
+function get20s(arr){ 
+  let twentiethCenturyartists=[];
+  for (let i=0; i < array.length; i++){
+    let lifeSpan = arr[i].years.split("-");
+    let birthYear = parseInt(lifeSpan[0]);
+    let deathYear = parseInt(lifeSpan[1]);
+    if (between(birthYear, 1900, 2000) || between(deathYear, 1900, 2000)){ 
+      twentiethCenturyartists.push(arr[i].name);
+    }
+  }
+  return twentiethCenturyartists;
 }
-
-
+console.log(twentiethCenturyartists);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
  Use removeArtist to do the following:
@@ -264,9 +273,11 @@ function get20s(/*Your Code Here*/){
  
  For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(indexnumber, ){
-   /*Your Code Here*/
+function removeArtist(array, index){
+  let newArray = array.splice(index, 1);
+  return newArray.length;
 }
+console.log (newArray.length);
    
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -285,17 +296,19 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(array, newObject){
-
-  "id": 19,
-  "name": "Cipta Hussain",
-  "years": "2001 - present",
-  "genre": "Web Developement",
-  "nationality": "American",
-  "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis lacus vel tellus posuere rhoncus quis eget nisl. Vivamus eu aliquet leo, et lobortis nibh.",
+function addArtist(array, newObject){ 
+  newObject = {
+    "id": 20,
+    "name": "Cipta Hussain",
+    "years": "2001 - 2021",
+    "genre": "Web Developement",
+    "nationality": "American",
+    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis lacus vel tellus posuere rhoncus quis eget nisl. Vivamus eu aliquet leo, et lobortis nibh.", 
+  }
+  array.push (newObject);
+  return array;
 }
-
-  
+console.log(addArtist)  
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use lotsOfArt to do the following: 
@@ -304,9 +317,11 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
+function lotsOfArt(array){ 
+  let newArr = (array.filter(array => array.paintings >= 100));
+  return newArr;
 }
+console.log(newArr);
 
 
 
