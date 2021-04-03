@@ -208,11 +208,9 @@ Practice accessing data above by console.log-ing following items:
 (no functions needed) */
 
 //(1) Name of the first artist (0th index) in the array
-
 console.log (artists[0].name)
 
 //(2) Bio of the third artist (2nd index) in the array 
-
 console.log(artists[2].bio)
 
 
@@ -222,8 +220,6 @@ There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is current
  artists [8].name = "Vincent Van Gogh";
  console.log(artists[8].name);
 
-
-
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
  Use getArtistByIndex to do the following:
  1. Receive an array
@@ -232,15 +228,10 @@ There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is current
  
  Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(indexnumber, name) {
-  let indexnumber = artists[/*indexnumber*/].id;
-  let name = artists[/*indexnumber*/].name;
-
-  return "the artist at index " + indexnumber + " is " + name; 
+function getArtistByIndex(indexnumber) {
+  return "the artist at index " + indexnumber + " is " + artists[/*indexnumber*/].name; 
 }  
-
-
-
+console.log(getArtistByIndex(0));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use get20s to do the following: 
@@ -273,12 +264,11 @@ console.log(twentiethCenturyartists);
  
  For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(array, index){
-  let newArray = array.splice(index, 1);
-  return newArray.length;
+function removeArtist(yourArray, index){
+  yourArray.splice(index, 1);
+  return yourArray.length;
 }
-console.log (newArray.length);
-   
+console.log (removeArtist(artists, 0));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
