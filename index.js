@@ -213,7 +213,6 @@ console.log (artists[0].name)
 //(2) Bio of the third artist (2nd index) in the array 
 console.log(artists[2].bio)
 
-
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
@@ -286,19 +285,20 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(array, newObject){ 
-  newObject = {
-    "id": 20,
-    "name": "Cipta Hussain",
-    "years": "2001 - 2021",
-    "genre": "Web Developement",
-    "nationality": "American",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis lacus vel tellus posuere rhoncus quis eget nisl. Vivamus eu aliquet leo, et lobortis nibh.", 
-  }
-  array.push (newObject);
-  return array;
+function addArtist(indexNumber, artistName, yearsActive, occupation, inputNationality, yourBio){ 
+  let artistAddition = {
+    id: indexNumber,
+    name: artistName,
+    years: yearsActive,
+    genre: occupation, 
+    nationality: inputNationality,
+    bio: yourBio, 
+  };
+  artists.push(artistAddition);
+  return artists;
 }
-console.log(addArtist)  
+console.log(addArtist(20, "Cipta", "2001-2021", "Web Design", "American", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."));  
+console.log(artists[20]);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use lotsOfArt to do the following: 
