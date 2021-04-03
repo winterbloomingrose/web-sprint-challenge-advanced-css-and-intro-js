@@ -248,7 +248,7 @@ function get20s(yourArray){
     let deathYear = parseInt(lifeSpan[1]);
     if (between(birthYear, 1900, 2000) || between(deathYear, 1900, 2000)){ 
       twentiethCenturyartists.push(arr[i].name);
-    }
+    } 
   }
   return twentiethCenturyartists;
 }
