@@ -241,17 +241,18 @@ console.log(getArtistByIndex(artists, 0));
   If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(yourArray){ 
-  let twentiethCenturyartists=[];
-  for (let i=0; i < array.length; i++){
-    let lifeSpan = arr[i].years.split("-");
-    let birthYear = parseInt(lifeSpan[0]);
-    let deathYear = parseInt(lifeSpan[1]);
-    if (between(birthYear, 1900, 2000) || between(deathYear, 1900, 2000)){ 
-      twentiethCenturyartists.push(arr[i].name);
-    }
+  let twentiethCenturyartists=[]
+
+  let lifeSpan = yourArray.years
+
+  let yearsAlive = [] == lifeSpan.split(" - ")
+  let bornYear = yearsAlive[0]
+  let deathYear = yearsAlive[1];
+  
+  twentiethCenturyartists.push(lifespan.filter(bornYear >=1900 && deathYear <= 2000));
+
+  return console.log(twentiethCenturyartists.name);
   }
-  return twentiethCenturyartists;
-}
 console.log(get20s(artists));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -307,14 +308,19 @@ console.log(artists[20]);
 
   For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(array){ 
-  let artFactory = (array.filter(array => array.paintings >= 100));
-  return artFactory;
+function lotsOfArt(yourArray){ 
+let activeArtists = [];
+for (let i = 0; i < yourArray.length; i++) {
+    if (yourArray[i].paintings > 100) {
+        activeArtists.push(yourArray[i]);
+    }
+  }
+  return activeArtist.name;
 }
 console.log(lotsOfArt(artists));
 
 
-// 🎨🎨 STRETCH 🎨🎨//
+// 🎨🎨 STRETCH 🎨🎨//  
 /* 💪💪💪💪💪💪 STRETCH 1: 💪💪💪💪💪💪 
 Programmatically console.log HTML element structure.
 
