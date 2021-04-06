@@ -208,17 +208,16 @@ Practice accessing data above by console.log-ing following items:
 (no functions needed) */
 
 //(1) Name of the first artist (0th index) in the array
-
+console.log (artists[0].name)
 
 //(2) Bio of the third artist (2nd index) in the array 
-
-
+console.log(artists[2].bio)
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
-(no function needed) 
-There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
-
-
+  (no function needed) 
+  There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
+artists [8].name = "Vincent Van Gogh";
+console.log(artists[8].name);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
  Use getArtistByIndex to do the following:
@@ -228,26 +227,31 @@ There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is current
  
  Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(/*Your Code Here*/) {
-  /*Your Code Here*/
+function getArtistByIndex(array, indexnumber) {
+  return "the artist at index " + indexnumber + " is " + array[indexnumber].name; 
 }  
-
-
+console.log(getArtistByIndex(artists, 0));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
-Use get20s to do the following: 
-1. Receive an array
-2. Return a new array with names of artists who were born in and died in 20th century (1900-2000) 
+  Use get20s to do the following: 
+  1. Receive an array
+  2. Return a new array with names of artists who were born in and died in 20th century (1900-2000) 
 
-Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
-If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
+  Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
+  If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(/*Your Code Here*/){
-  /*Your Code Here*/
-}
+  function get20s(yourArray){ 
+    let twentiethCenturyartists = [];
+    for (let i = 0; i < yourArray.length; i++) {
+      let lifeTime = yourArray[i].years.split(" - ");
+      if (lifeTime[0] >= 1900 && lifeTime[1] <= 2000){
+        twentiethCenturyartists.push(yourArray[i].name)
+        }
+    }
+    return twentiethCenturyartists;
+  }
 
-
-
+console.log(get20s(artists))
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
  Use removeArtist to do the following:
  1. Receive an array
@@ -257,48 +261,63 @@ function get20s(/*Your Code Here*/){
  
  For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(/*Your Code Here*/){
-   /*Your Code Here*/
+function removeArtist(yourArray, index){
+  yourArray.splice(index, 1);
+  return yourArray.length;
 }
-   
+console.log (removeArtist(artists, 0));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
-Use addArtist to do the following: 
-1. Receive an array
-2. Add this object of information to the end of the array
-    { 
-      id: 20,
-      name: Your Name Here, 
-      years: Your Birth Year - current day,
-      genre: Web Design, 
-      nationality: Your Nationality Here
-      bio: Add 1-2 sentences (or use lorem ipsum)
-    }  
-3. Return the resulting array
+  Use addArtist to do the following: 
+  1. Receive an array
+  2. Add this object of information to the end of the array
+      { 
+        id: 20,
+        name: Your Name Here, 
+        years: Your Birth Year - current day,
+        genre: Web Design, 
+        nationality: Your Nationality Here
+        bio: Add 1-2 sentences (or use lorem ipsum)
+      }  
+  3. Return the resulting array
 
-Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
+  Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
-
-  
+function addArtist(yourArray,indexNumber, artistName, yearsActive, occupation, inputNationality, yourBio){ 
+  let artistAddition = {
+    id: indexNumber,
+    name: artistName,
+    years: yearsActive,
+    genre: occupation, 
+    nationality: inputNationality,
+    bio: yourBio, 
+  };
+  yourArray.push(artistAddition);
+  return yourArray;
+}
+console.log(addArtist(artists,20, "Cipta", "2001-2021", "Web Design", "American", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."));  
+console.log(artists[20]);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
-Use lotsOfArt to do the following: 
-1. Receive an array 
-2. Return an array with names of artists in the received array who painted more than 100 paintings.
+  Use lotsOfArt to do the following: 
+  1. Receive an array 
+  2. Return an array with names of artists in the received array who painted more than 100 paintings.
 
-For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
+  For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
+function lotsOfArt(yourArray){ 
+let activeArtists = [];
+for (let i = 0; i < yourArray.length; i++) {
+    if (yourArray[i].paintings > 100) {
+        activeArtists.push(yourArray[i].name);
+    }
+  }
+  return activeArtists;
 }
+console.log(lotsOfArt(artists));
 
 
-
-
-// 🎨🎨 STRETCH 🎨🎨//
+// 🎨🎨 STRETCH 🎨🎨//  
 /* 💪💪💪💪💪💪 STRETCH 1: 💪💪💪💪💪💪 
 Programmatically console.log HTML element structure.
 
@@ -332,7 +351,7 @@ Create a function called `randomize` that takes a data array as an argument and 
 
 function randomize(/* Code here */){
 
-    /* Code here */
+    /* Code here */ 
 
   }
 
