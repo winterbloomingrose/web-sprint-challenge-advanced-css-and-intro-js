@@ -240,21 +240,18 @@ console.log(getArtistByIndex(artists, 0));
   Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
   If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(yourArray){ 
-  let twentiethCenturyartists=[]
-
-  let lifeSpan = yourArray.years
-
-  let yearsAlive = [] == lifeSpan.split(" - ")
-  let bornYear = yearsAlive[0]
-  let deathYear = yearsAlive[1];
-  
-  twentiethCenturyartists.push(lifespan.filter(bornYear >=1900 && deathYear <= 2000));
-
-  return console.log(twentiethCenturyartists.name);
+  function get20s(yourArray){ 
+    let twentiethCenturyartists = [];
+    for (let i = 0; i < yourArray.length; i++) {
+      let lifeTime = yourArray[i].years.split(" - ");
+      if (lifeTime[0] >= 1900 && lifeTime[1] <= 2000){
+        twentiethCenturyartists.push(yourArray[i].name)
+        }
+    }
+    return twentiethCenturyartists;
   }
-console.log(get20s(artists));
 
+console.log(get20s(artists))
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
  Use removeArtist to do the following:
  1. Receive an array
@@ -312,10 +309,10 @@ function lotsOfArt(yourArray){
 let activeArtists = [];
 for (let i = 0; i < yourArray.length; i++) {
     if (yourArray[i].paintings > 100) {
-        activeArtists.push(yourArray[i]);
+        activeArtists.push(yourArray[i].name);
     }
   }
-  return activeArtist.name;
+  return activeArtists;
 }
 console.log(lotsOfArt(artists));
 
